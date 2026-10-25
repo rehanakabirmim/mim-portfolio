@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('rkm_theme_v2') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Rehana Kabir Mim - Laravel Backend Specialist</title>
+  <meta name="description" content="Learn about Rehana Kabir Mim - Software Engineer, Laravel Developer, B.Sc in CSE (CGPA 3.84), career experience at Softvence Agency, and technical certifications.">
+  <link rel="canonical" href="https://rehanakabirmim.github.io/portfolio_up/about.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='85' font-weight='bold' fill='%236366f1'>&lt;M/&gt;</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Background Canvas / Gradients -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="brand-logo" aria-label="Rehana Kabir Mim Home">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">RKM</span>
+        <span class="logo-slash">/</span>
+        <span class="logo-bracket">&gt;</span>
+        <span class="logo-pulse" aria-hidden="true"></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+
+        <!-- Quick Resume Modal Trigger -->
+        <button class="btn btn-secondary-sm" id="view-resume-btn">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>CV</span>
+        </button>
+
+        <a href="contact.html" class="btn btn-primary-sm">
+          <span>Let's Talk</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Mobile Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="logo-bracket">&lt;</span><span class="logo-text">RKM</span><span class="logo-bracket">/&gt;</span>
+      </div>
+      <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link active">About</a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary w-full" id="mobile-resume-btn">View Full Resume</button>
+      <div class="drawer-socials">
+        <a href="https://github.com/rehanakabirmim" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/rehana-kabir-mim-63bb6623a" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- MAIN CONTENT -->
+  <main style="padding-top: calc(var(--header-height) + 40px);">
+    <!-- PAGE HERO BANNER -->
+    <section class="section" style="padding-top: 20px; padding-bottom: 40px;">
+      <div class="container text-center">
+        <span class="section-tag">ENGINEERING PROFILE</span>
+        <h1 class="section-title">About Me & My Journey</h1>
+        <p class="section-desc">Full-Stack Developer focused on backend architecture, reliable database systems, and secure RESTful APIs.</p>
+        <div class="section-divider"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT GRID & PHILOSOPHY -->
+    <section class="section" style="padding-top: 0; padding-bottom: 60px;">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-card glass-panel">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h2 class="card-title" style="font-size: 1.5rem;">About Me</h2>
+            <p class="card-text">
+              I am <strong>Rehana Kabir Mim</strong>, a Software Engineer and Laravel-focused Full-Stack Developer based in Dhaka, Bangladesh. I specialize in building scalable backend systems, secure REST APIs, and reliable business workflows using Laravel, PHP, and MySQL.
+            </p>
+            <p class="card-text" style="margin-top: 12px;">
+              Currently working as an <strong>Executive Laravel Developer at Softvence Agency</strong> (with Project Lead responsibilities), I contribute to enterprise applications involving database architecture, payment integrations, real-time communication, and third-party APIs. I also collaborate with clients and development teams to clarify requirements, coordinate implementation, and deliver maintainable software.
+            </p>
+            <div class="about-highlights" style="margin-top: 20px;">
+              <div class="highlight-item">
+                <span class="highlight-check">✓</span>
+                <span>Graduated with <strong>3.84 CGPA</strong> in B.Sc. in Computer Science & Engineering (Major in Software Engineering).</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-check">✓</span>
+                <span>Certified by <strong>NSDA Bangladesh</strong> (RPL Level 03 Web Design & Development).</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-check">✓</span>
+                <span>Experienced in direct client communication, sprint reviews, and technical team coordination.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-card glass-panel">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+            </div>
+            <h2 class="card-title" style="font-size: 1.5rem;">What Sets Me Apart</h2>
+            <p class="card-text">
+              Key areas of practical backend expertise demonstrated in production:
+            </p>
+            <ul class="differentiator-list" style="margin-top: 14px;">
+              <li>
+                <strong>Reliable Database Workflows:</strong> Database transactions, row-level locking (<code>lockForUpdate</code>), and concurrency-aware inventory and payment workflows.
+              </li>
+              <li>
+                <strong>Real-Time Applications:</strong> Laravel Reverb, WebSockets, event broadcasting, and Firebase Cloud Messaging (FCM).
+              </li>
+              <li>
+                <strong>Payment Integrations:</strong> Stripe, Stripe Connect, subscription billing, webhooks, and payout workflows.
+              </li>
+              <li>
+                <strong>AI Integrations:</strong> Google Gemini API integrations for sales trend analytics and smart recommendation features.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section skills-section" id="skills" style="padding-top: 40px; padding-bottom: 60px;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">CORE COMPETENCIES</span>
+          <h2 class="section-title">Technical Expertise & Tooling</h2>
+          <p class="section-desc">Tools, frameworks, and backend technologies I use to build and maintain scalable web applications.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Skills Filter -->
+        <div class="skills-filter-tabs" role="tablist" aria-label="Skills Category Filters">
+          <button class="skill-filter-btn active" role="tab" aria-selected="true" data-filter="all">All Skills</button>
+          <button class="skill-filter-btn" role="tab" aria-selected="false" data-filter="backend">Backend & Architecture</button>
+          <button class="skill-filter-btn" role="tab" aria-selected="false" data-filter="database">Database & Cache</button>
+          <button class="skill-filter-btn" role="tab" aria-selected="false" data-filter="integrations">Integrations & Real-Time</button>
+          <button class="skill-filter-btn" role="tab" aria-selected="false" data-filter="frontend">Frontend & Mobile</button>
+          <button class="skill-filter-btn" role="tab" aria-selected="false" data-filter="devops">DevOps & Tools</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <!-- Empty Category Feedback -->
+          <div class="skills-empty-state" id="skills-empty-state" style="display: none;" role="status" aria-live="polite">
+            <p>No technologies currently categorized in this filter.</p>
+          </div>
+          <!-- Backend -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon laravel-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>PHP & Laravel (10–13)</h4>
+                <span>Core Backend Stack</span>
+              </div>
+            </div>
+            <p class="skill-desc">Engineered production systems using Laravel and PHP. Hands-on experience with MVC, Eloquent ORM, Events, Listeners, Custom Middleware, Artisan commands, migrations, and seeders.</p>
+            <div class="skill-pills">
+              <span>Laravel 10–13</span>
+              <span>PHP 8.2+</span>
+              <span>C Language</span>
+              <span>OOP / MVC</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon api-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>RESTful API Architecture</h4>
+                <span>Enterprise API Design</span>
+              </div>
+            </div>
+            <p class="skill-desc">Resource controllers, form requests, API rate limiting, versioning, consistent JSON responses, Postman automated tests.</p>
+            <div class="skill-pills">
+              <span>REST APIs</span>
+              <span>Laravel Sanctum</span>
+              <span>API Security</span>
+              <span>Rate Limiting</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon queue-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>Queues, Jobs & Workers</h4>
+                <span>Asynchronous Processing</span>
+              </div>
+            </div>
+            <p class="skill-desc">Asynchronous processing for background notifications, scheduled payouts, queue retries, and job failure management.</p>
+            <div class="skill-pills">
+              <span>Laravel Queues</span>
+              <span>Job Dispatching</span>
+              <span>Redis Workers</span>
+              <span>Batch Processing</span>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="skill-card" data-category="database">
+            <div class="skill-header">
+              <div class="skill-icon db-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>MySQL & Complex Schemas</h4>
+                <span>Database Engineering</span>
+              </div>
+            </div>
+            <p class="skill-desc">Normalized schemas, index optimization, polymorphic relationships, foreign keys, Database Transactions & Pessimistic Row Locking (lockForUpdate).</p>
+            <div class="skill-pills">
+              <span>MySQL</span>
+              <span>Eloquent ORM</span>
+              <span>Indexing</span>
+              <span>Pessimistic Locking</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="database">
+            <div class="skill-header">
+              <div class="skill-icon redis-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>Redis In-Memory Caching</h4>
+                <span>High Performance</span>
+              </div>
+            </div>
+            <p class="skill-desc">Session storage, rate-limiting caches, cached query outputs for expensive AI analytical endpoints.</p>
+            <div class="skill-pills">
+              <span>Redis</span>
+              <span>Cache Invalidation</span>
+              <span>Key-Value</span>
+            </div>
+          </div>
+
+          <!-- Integrations & Real-Time -->
+          <div class="skill-card" data-category="integrations">
+            <div class="skill-header">
+              <div class="skill-icon reverb-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>Laravel Reverb & WebSockets</h4>
+                <span>Real-Time Events</span>
+              </div>
+            </div>
+            <p class="skill-desc">Laravel-native WebSocket broadcasting with Laravel Reverb for live order updates, real-time consultation streams, and Kanban boards.</p>
+            <div class="skill-pills">
+              <span>Laravel Reverb</span>
+              <span>WebSockets</span>
+              <span>Event Broadcasting</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="integrations">
+            <div class="skill-header">
+              <div class="skill-icon stripe-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>Stripe & Stripe Connect</h4>
+                <span>Payment Gateways</span>
+              </div>
+            </div>
+            <p class="skill-desc">Stripe PaymentIntents, webhook signature verification, platform fee splits, and automated account transfers.</p>
+            <div class="skill-pills">
+              <span>Stripe Connect</span>
+              <span>Webhooks</span>
+              <span>Subscriptions</span>
+              <span>Idempotency</span>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="integrations">
+            <div class="skill-header">
+              <div class="skill-icon fcm-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>Firebase FCM & AI Integrations</h4>
+                <span>Push & Intelligence</span>
+              </div>
+            </div>
+            <p class="skill-desc">Firebase Cloud Messaging for Android/iOS push notifications, Google Gemini AI API integrations, Twilio SMS.</p>
+            <div class="skill-pills">
+              <span>Firebase FCM</span>
+              <span>Google Gemini AI</span>
+              <span>Twilio</span>
+              <span>Social Auth</span>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-icon front-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>Modern Frontend (JS / Next.js)</h4>
+                <span>Client & Admin UIs</span>
+              </div>
+            </div>
+            <p class="skill-desc">HTML5, CSS3, ES6+ JavaScript, Next.js, Bootstrap 5, jQuery, responsive design, Blade templates.</p>
+            <div class="skill-pills">
+              <span>JavaScript</span>
+              <span>Next.js</span>
+              <span>HTML5/CSS3</span>
+              <span>Bootstrap</span>
+              <span>Blade</span>
+            </div>
+          </div>
+
+          <!-- DevOps & Tools -->
+          <div class="skill-card" data-category="devops">
+            <div class="skill-header">
+              <div class="skill-icon docker-color">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4>DevOps, Version Control & Tools</h4>
+                <span>Version Control & Production Delivery</span>
+              </div>
+            </div>
+            <p class="skill-desc">Version control workflows with Git, GitHub & GitLab, Postman API test collections, Hostinger VPS, cPanel deployment, Linux CLI basics, Docker (familiar).</p>
+            <div class="skill-pills">
+              <span>Git & GitHub</span>
+              <span>GitLab</span>
+              <span>Version Control</span>
+              <span>Postman</span>
+              <span>VPS / cPanel</span>
+              <span>Linux CLI</span>
+              <span>Docker (Familiar)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE TIMELINE -->
+    <section class="section experience-section" id="experience" style="padding-top: 40px;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">CAREER MILESTONES</span>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-desc">Hands-on experience delivering enterprise applications for international clients and production applications.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <!-- Softvence Agency -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Executive Laravel Developer</h3>
+                <span class="timeline-divider">|</span>
+                <span class="timeline-company">Softvence Agency</span>
+                <span class="timeline-divider">|</span>
+                <span class="timeline-duration">August 2025 – Present</span>
+              </div>
+              <p class="timeline-desc">
+                Serving as a key backend engineer driving core application architecture, database design, API security, and real-time features.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Develop scalable web and mobile applications using Laravel, PHP, MySQL, REST APIs, and Laravel Sanctum.</li>
+                <li>Design database architecture, relationships, migrations, and backend workflows for production-ready applications.</li>
+                <li>Build authentication, payment integrations, webhooks, notifications, real-time features, and third-party API integrations.</li>
+                <li>Lead sprint planning, task assignments, code reviews, and quality assurance to ensure production excellence.</li>
+                <li>Communicate directly with international clients regarding technical requirements, architecture, and sprint milestones.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Web Shinez Technology -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Laravel Developer Intern</h3>
+                <span class="timeline-divider">|</span>
+                <span class="timeline-company">Web Shinez Technology</span>
+                <span class="timeline-divider">|</span>
+                <span class="timeline-duration">July 2024 – December 2024</span>
+              </div>
+              <p class="timeline-desc">
+                Contributed to the development of an enterprise Student Management System with modular administrative and academic tracking capabilities.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Developed HR, administration, and student attendance modules using Laravel and MySQL.</li>
+                <li>Worked on relational database schema designs, migrations, and secure RESTful endpoints.</li>
+                <li>Assisted with testing, bug fixes, and seamless frontend-backend integration.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section class="section education-section" id="education" style="padding-top: 40px; padding-bottom: 80px;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">CREDENTIALS</span>
+          <h2 class="section-title">Education & Certifications</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="credentials-grid">
+          <!-- B.Sc in CSE -->
+          <div class="credential-card glass-panel">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="cred-content">
+              <span class="cred-type">Undergraduate Degree</span>
+              <h3 class="cred-title">B.Sc. in Computer Science and Engineering</h3>
+              <p class="cred-institution">Stamford University Bangladesh • 2018 – 2023</p>
+              <div class="cred-badge">
+                <span>CGPA: <strong>3.84 / 4.00</strong> (Major in Software Engineering)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NSDA Certification -->
+          <div class="credential-card glass-panel">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <div class="cred-content">
+              <span class="cred-type">Government Certification</span>
+              <h3 class="cred-title">RPL Level 03: Web Design & Development</h3>
+              <p class="cred-institution">NSDA (National Skills Development Authority) Bangladesh • 2025</p>
+              <div class="cred-badge">
+                <span>National Competency Standard Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Training -->
+          <div class="credential-card glass-panel">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="cred-content">
+              <span class="cred-type">Specialized Training</span>
+              <h3 class="cred-title">Professional PHP & Laravel Development</h3>
+              <p class="cred-institution">UY Systems Ltd & Pencil Box Training</p>
+              <div class="cred-badge">
+                <span>Comprehensive Practical Training</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick CTA -->
+        <div class="text-center" style="margin-top: 50px;">
+          <button class="btn btn-primary btn-glow" id="open-cv-modal-btn">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span>Preview & Download Full Resume</span>
+          </button>
+          <a href="projects.html" class="btn btn-secondary" style="margin-left: 12px;">
+            <span>Explore Projects & Architecture</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="index.html" class="brand-logo footer-logo">
+          <span class="logo-bracket">&lt;</span><span class="logo-text">RKM</span><span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Engineered with high standards, clean architecture & production rigor.</p>
+      </div>
+
+      <div class="footer-center">
+        <span class="status-indicator-ping"></span>
+        <span>Open for Full-Stack Laravel Opportunities</span>
+      </div>
+
+      <div class="footer-right">
+        <p class="copyright">&copy; <span id="current-year">2026</span> Rehana Kabir Mim. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME PREVIEW / PRINT MODAL -->
+  <div class="modal-overlay" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title" aria-hidden="true">
+    <div class="modal-container resume-modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="resume-modal-title">Rehana Kabir Mim - Professional Resume</h3>
+        </div>
+        <div class="modal-actions-group">
+          <a href="assets/Rehana_Kabir_Mim_Resume.pdf" download="Rehana_Kabir_Mim_Resume.pdf" class="btn btn-primary-sm" id="download-resume-btn" aria-label="Download resume PDF directly">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PDF</span>
+          </a>
+          <button class="btn btn-secondary-sm" id="print-resume-btn" aria-label="Print resume">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Print</span>
+          </button>
+          <button class="close-modal-btn" id="close-resume-modal" aria-label="Close resume modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body printable-resume" id="printable-resume-content">
+        <div class="resume-sheet-header">
+          <h2>REHANA KABIR MIM</h2>
+          <div class="resume-sheet-role">Full-Stack Developer | Laravel & Backend Specialist</div>
+          <div class="resume-sheet-contact">
+            <span>Rayerbag, Jatrabari, Dhaka-1362</span> • 
+            <span><a href="mailto:rehanakabirmim@gmail.com">rehanakabirmim@gmail.com</a></span> • 
+            <span>(+880) 1680650424</span>
+          </div>
+          <div class="resume-sheet-links">
+            <a href="https://github.com/rehanakabirmim" target="_blank">github.com/rehanakabirmim</a> • 
+            <a href="https://www.linkedin.com/in/rehana-kabir-mim-63bb6623a" target="_blank">linkedin.com/in/rehana-kabir-mim</a> • 
+            <a href="https://pacinos.uk/" target="_blank">Portfolio & Live Systems</a>
+          </div>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">PROFESSIONAL SUMMARY</h4>
+          <p>
+            Laravel-focused Full-Stack Developer experienced in building backend systems for web and mobile applications. Skilled in PHP, Laravel, MySQL, REST API development, database transactions, row-level locking, Stripe integrations, real-time communication, background queues, and third-party APIs. Experienced in coordinating development tasks, collaborating with international clients, and contributing to production applications.
+          </p>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">WORK EXPERIENCE</h4>
+
+          <div class="resume-entry">
+            <div class="resume-entry-title">
+              <strong>Executive Laravel Developer</strong><span class="resume-meta-divider">|</span>Softvence Agency<span class="resume-meta-divider">|</span><span class="resume-entry-date">August 2025 – Present</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Architect and develop scalable backend ecosystems using Laravel, PHP, MySQL, REST APIs, and Laravel Sanctum.</li>
+              <li>Design database architecture, relationships, complex migrations, and real-time workflows for production systems.</li>
+              <li>Build authentication, payment gateways (Stripe &amp; Stripe Connect), webhooks, push notifications, and background queues.</li>
+              <li>Lead project sprint planning, task assignments, code reviews, and QA validation to ensure high technical quality.</li>
+              <li>Communicate directly with international clients to clarify specifications, conduct sprint demos, and align deliverables.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-title">
+              <strong>Laravel Developer Intern</strong><span class="resume-meta-divider">|</span>Web Shinez Technology<span class="resume-meta-divider">|</span><span class="resume-entry-date">July 2024 – December 2024</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Developed a Student Management System using Laravel, including HR, administration, and attendance modules.</li>
+              <li>Worked on database design, migrations, backend development, and REST API integration.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">TECHNICAL SKILLS</h4>
+          <div class="resume-skills-grid">
+            <div class="resume-skill-row">
+              <strong>Programming Languages:</strong> <span>C, PHP, JavaScript, SQL</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Backend Development:</strong> <span>Laravel (10–13), OOP, MVC, Eloquent ORM, RESTful API Development, Laravel Sanctum</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Database:</strong> <span>MySQL, Schema Design, Migrations, Indexing, Transactions, Row-Level Locking (<code>lockForUpdate</code>)</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Payment Integration:</strong> <span>Stripe, Stripe Connect, Webhooks, Subscription Management</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Real-Time &amp; Background:</strong> <span>Laravel Reverb, WebSockets, Queues, Background Workers, Redis</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Third-Party Integrations:</strong> <span>Firebase Cloud Messaging (FCM), Google Gemini API, Twilio</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Frontend:</strong> <span>HTML5, CSS3, Bootstrap, JavaScript, jQuery, Blade, Next.js</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Tools &amp; Deployment:</strong> <span>Git, GitHub, GitLab, Postman, Linux CLI, Hostinger VPS, cPanel, Docker (Familiar)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE 2 (PAGE BREAK FOR PRINT) -->
+        <div class="resume-section-block page-break">
+          <h4 class="resume-sec-title">FEATURED PROJECTS (SELECTED WORKS)</h4>
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>Ali Pacino — Multi-Branch Restaurant ERP &amp; AI</strong> (<a href="https://pacinos.uk/" target="_blank" rel="noopener">pacinos.uk</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Developed multi-branch architecture with 89 Eloquent models, 8-role RBAC, and pessimistic row-locking (<code>lockForUpdate</code>) for concurrent POS inventory deductions.</li>
+              <li>Integrated real-time Kitchen Display (KDS) via Laravel Reverb WebSockets and Google Gemini AI sales trend analytics.</li>
+            </ul>
+          </div>
+
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>BioVue Digital Wellness — AI-Driven Health &amp; Telehealth</strong> (<a href="https://biovuedigitalwellness.com/" target="_blank" rel="noopener">biovuedigitalwellness.com</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Contributed to 100+ secure RESTful APIs with Laravel Sanctum, custom rate-limiting middleware, and strict request validation.</li>
+              <li>Integrated Stripe multi-tier subscription engine with webhook validation, automated trial handling, and Firebase FCM push alerts.</li>
+            </ul>
+          </div>
+
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>Connect to Inspect — Property Inspection Marketplace</strong> (<a href="https://play.google.com/store/apps/details?id=com.connecttoinspect.app" target="_blank" rel="noopener">Google Play</a> • <a href="https://apps.apple.com/us/app/connect-to-inspect/id6786938827" target="_blank" rel="noopener">App Store</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Engineered Stripe Connect payout workflows with queued transfers, dynamic platform fee splits, and idempotency protection.</li>
+              <li>Developed corporate client reporting engine with scheduled PDF exports and role-based permissions.</li>
+            </ul>
+          </div>
+
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>Find &amp; Book — Multi-Vendor Booking &amp; E-Commerce Platform</strong> (<a href="https://play.google.com/store/apps/details?id=com.findandbook.sireenshaban" target="_blank" rel="noopener">Google Play</a> • <a href="https://apps.apple.com/us/app/find-book/id6761288062" target="_blank" rel="noopener">App Store</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Web Admin &amp; Mobile App</span><span class="resume-meta-divider">|</span><span class="resume-role-label-solo">Role: Sole Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Developed the complete Laravel backend and versioned RESTful APIs powering both iOS and Android applications.</li>
+              <li>Implemented time-slot booking management, Stripe payment webhooks, vendor subscription tiers, and earnings calculation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">EDUCATION &amp; CERTIFICATIONS</h4>
+          <div class="resume-edu-item">
+            <div class="resume-edu-title">
+              <strong>B.Sc. in Computer Science and Engineering</strong> — Stamford University Bangladesh
+            </div>
+            <div class="resume-edu-date">
+              2018 – 2023 | CGPA: 3.84 / 4.00
+            </div>
+          </div>
+          <div class="resume-edu-item">
+            <div class="resume-edu-title">
+              <strong>Professional Certifications &amp; Specialized Training:</strong>
+            </div>
+            <ul class="resume-bullet-list" style="margin-top: 4px;">
+              <li><strong>RPL Web Design &amp; Development (Level 03)</strong> — National Skills Development Authority (NSDA) Bangladesh (2025)</li>
+              <li><strong>Professional PHP &amp; Laravel Development</strong> — UY Systems Ltd &amp; Pencil Box Training</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>

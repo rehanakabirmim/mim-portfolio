@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('rkm_theme_v2') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Architecture | Rehana Kabir Mim - Laravel Backend Specialist</title>
+  <meta name="description" content="Explore production backend projects, multi-branch ERP architecture, Stripe Connect payouts, real-time WebSockets, and Gemini AI by Rehana Kabir Mim.">
+  <link rel="canonical" href="https://rehanakabirmim.github.io/portfolio_up/projects.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='85' font-weight='bold' fill='%236366f1'>&lt;M/&gt;</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Background Canvas / Gradients -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="brand-logo" aria-label="Rehana Kabir Mim Home">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">RKM</span>
+        <span class="logo-slash">/</span>
+        <span class="logo-bracket">&gt;</span>
+        <span class="logo-pulse" aria-hidden="true"></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+
+        <!-- Quick Resume Modal Trigger -->
+        <button class="btn btn-secondary-sm" id="view-resume-btn">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>CV</span>
+        </button>
+
+        <a href="contact.html" class="btn btn-primary-sm">
+          <span>Let's Talk</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Mobile Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="logo-bracket">&lt;</span><span class="logo-text">RKM</span><span class="logo-bracket">/&gt;</span>
+      </div>
+      <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="projects.html" class="mobile-nav-link active">Projects</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary w-full" id="mobile-resume-btn">View Full Resume</button>
+      <div class="drawer-socials">
+        <a href="https://github.com/rehanakabirmim" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/rehana-kabir-mim-63bb6623a" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- MAIN CONTENT -->
+  <main style="padding-top: calc(var(--header-height) + 40px);">
+    <!-- PAGE HERO BANNER -->
+    <section class="section" style="padding-top: 20px; padding-bottom: 40px;">
+      <div class="container text-center">
+        <span class="section-tag">ENGINEERING PORTFOLIO</span>
+        <h1 class="section-title">Production Systems & Architecture</h1>
+        <p class="section-desc">Selected showcase of 4 featured case studies (including Solo Backend Ownership & Team Projects) from 10+ applications worked on, handling live transactions, row-locking, and real-time WebSockets.</p>
+        <div class="section-divider"></div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE SPOTLIGHT (STANDOUT FEATURE!) -->
+    <section class="section architecture-section" id="architecture" style="padding-top: 0; padding-bottom: 70px;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">ENGINEERING SPOTLIGHT</span>
+          <h2 class="section-title">How I Architect Scalable Systems</h2>
+          <p class="section-desc">Interactive breakdown of real backend architectures I have built and deployed to production.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- Architecture Tabs -->
+        <div class="arch-tabs" role="tablist" aria-label="System Architecture Spotlights">
+          <button class="arch-tab-btn active" id="tab-btn-erp" role="tab" aria-selected="true" aria-controls="tab-erp" data-tab="tab-erp">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Ali Pacino: Multi-Branch ERP</span>
+          </button>
+          <button class="arch-tab-btn" id="tab-btn-payouts" role="tab" aria-selected="false" aria-controls="tab-payouts" data-tab="tab-payouts">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span>Connect to Inspect: Stripe Connect Payouts</span>
+          </button>
+          <button class="arch-tab-btn" id="tab-btn-wellness" role="tab" aria-selected="false" aria-controls="tab-wellness" data-tab="tab-wellness">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span>BioVue: AI Wellness & Real-Time</span>
+          </button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="arch-tab-content active" id="tab-erp" role="tabpanel" aria-labelledby="tab-btn-erp" tabindex="0">
+          <div class="arch-card glass-panel">
+            <div class="arch-header">
+              <div class="arch-badge">Conceptual Architecture • Order Processing Flow</div>
+              <h3>Ali Pacino Restaurant ERP & AI Intelligence Architecture</h3>
+              <p>Handling 89 models, 84 controllers, and 96 migrations across independent branches with live POS & KDS sync.</p>
+            </div>
+
+            <!-- Architecture Diagram / Flow -->
+            <div class="arch-pipeline">
+              <div class="pipeline-step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                  <h4>Client / POS</h4>
+                  <p>Authenticated API request with order validation and branch authorization.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                  <h4>Transaction & Inventory</h4>
+                  <p>DB transaction + <code>lockForUpdate()</code> for concurrent stock deductions.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                  <h4>Events & Real-Time Updates</h4>
+                  <p>Broadcast order status to KDS Kanban & dashboards through Laravel Reverb.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                  <h4>Background Analytics</h4>
+                  <p>Queued analytics and Redis caching for Gemini-powered demand insights.</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="arch-flow-note" style="font-size: 0.82rem; color: var(--text-dim); margin-top: 14px; text-align: center; font-style: italic;">*Conceptual pipeline diagram illustrating core order, transaction, event, and background analytics touchpoints.</p>
+            <div class="arch-metrics-tags" style="margin-top: 14px;">
+              <span class="tech-tag">8-Role RBAC</span>
+              <span class="tech-tag">Branch Data Isolation</span>
+              <span class="tech-tag">Row-Level Locking</span>
+              <span class="tech-tag">Laravel Reverb</span>
+              <span class="tech-tag">Firebase FCM</span>
+              <span class="tech-tag">Google Gemini AI</span>
+              <span class="tech-tag">Redis Cache</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-tab-content" id="tab-payouts" role="tabpanel" aria-labelledby="tab-btn-payouts" tabindex="0">
+          <div class="arch-card glass-panel">
+            <div class="arch-header">
+              <div class="arch-badge">Conceptual Architecture • Payout & Escrow Flow</div>
+              <h3>Connect to Inspect Stripe Connect Pipeline</h3>
+              <p>Automated payment authorization holding, dynamic platform fee splits, and scheduled worker payouts for home inspection specialists.</p>
+            </div>
+
+            <div class="arch-pipeline">
+              <div class="pipeline-step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                  <h4>Inspection Booking</h4>
+                  <p>Client pays through Stripe PaymentIntent. Funds are held securely until inspection delivery.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                  <h4>Report Submission</h4>
+                  <p>Inspector submits inspection report on mobile app; verified by authorization gates.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                  <h4>Queued Split Calculation</h4>
+                  <p>Laravel Queue Job calculates platform percentage cut, tax, and net inspector payout.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                  <h4>Stripe Connect Transfer</h4>
+                  <p>Automated transfer to Connected Account with webhook reconciliation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-metrics-tags">
+              <span class="tech-tag">Stripe Connect</span>
+              <span class="tech-tag">Laravel Queues</span>
+              <span class="tech-tag">Webhook Verification</span>
+              <span class="tech-tag">Geo-Targeted FCM</span>
+              <span class="tech-tag">Distance-Based Matching</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-tab-content" id="tab-wellness" role="tabpanel" aria-labelledby="tab-btn-wellness" tabindex="0">
+          <div class="arch-card glass-panel">
+            <div class="arch-header">
+              <div class="arch-badge">Conceptual Architecture • Subscriptions & Real-Time Flow</div>
+              <h3>BioVue Digital Wellness AI Recommendation Engine</h3>
+              <p>Health telemetry processing, subscription management, and instant biometric streak tracking.</p>
+            </div>
+
+            <div class="arch-pipeline">
+              <div class="pipeline-step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                  <h4>Biometric Ingestion</h4>
+                  <p>Client inputs vitals and wellness telemetry via 100+ Sanctum REST APIs.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                  <h4>AI Projection Pipeline</h4>
+                  <p>Calculates wellness trend score and generates targeted supplement suggestions.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                  <h4>Stripe Subscriptions</h4>
+                  <p>Handles recurring tiers, trial expirations, and access level webhooks.</p>
+                </div>
+              </div>
+              <div class="pipeline-connector">➔</div>
+              <div class="pipeline-step">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                  <h4>Live Chat & Notifications</h4>
+                  <p>Real-time client-practitioner consultation powered by Laravel Reverb & FCM.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-metrics-tags">
+              <span class="tech-tag">Laravel Sanctum</span>
+              <span class="tech-tag">Stripe Billing</span>
+              <span class="tech-tag">Next.js Frontend</span>
+              <span class="tech-tag">Trend Analytics</span>
+              <span class="tech-tag">Push Notifications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL PRODUCTION PROJECTS SHOWCASE -->
+    <section class="section projects-section" id="projects" style="padding-top: 0; padding-bottom: 80px;">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">PRODUCTION WORK</span>
+          <h2 class="section-title">All Featured Enterprise & AI Projects</h2>
+          <p class="section-desc">Comprehensive overview of production applications, database design, and technical contributions.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1: ALI PACINO -->
+          <article class="project-card glass-panel" id="project-ali-pacino">
+            <div class="project-img-box">
+              <img src="assets/images/ali-pacino.jpg" alt="Ali Pacino Restaurant ERP Dashboard" class="project-img" loading="lazy">
+              <div class="project-img-overlay">
+                <span class="project-category-badge">Multi-Branch SaaS ERP</span>
+                <a href="https://pacinos.uk/" target="_blank" rel="noopener" class="btn-live-preview" title="Visit Live Site">
+                  <span>Visit pacinos.uk</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta-strip">
+                <span class="company-badge">Softvence Agency</span>
+                <span class="role-badge">Role: Project Lead & Backend Developer</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://pacinos.uk/" target="_blank" rel="noopener">Ali Pacino – Multi-Branch Restaurant ERP & AI Intelligence</a>
+              </h3>
+
+              <p class="project-summary">
+                A multi-branch restaurant ERP platform featuring POS workflows, recipe-based inventory management, kitchen operations, real-time order updates, and AI-assisted analytics. The platform includes <strong>89 Eloquent models, 84 controllers, 96 migrations</strong>, and role-based access controls with branch-level data isolation.
+              </p>
+
+              <!-- Key Achievements & Contribution -->
+              <div class="project-highlights-box">
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Role & Coordination:</strong> Project Lead & Backend Developer coordinating sprint milestones, requirements, and technical implementation.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>POS & Inventory Deductions:</strong> Contributed to backend workflows for POS orders and recipe ingredient deductions using database transactions and row-level locking (<code>lockForUpdate</code>).</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Real-Time Operations:</strong> Broadcast order status updates to Kitchen Display Systems (KDS Kanban) and driver dispatch via Laravel Reverb WebSockets.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>AI Insights:</strong> Integrated Google Gemini AI for automated sales trend analytics and inventory demand forecasting.</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="project-tech-stack">
+                <span class="tech-pill">Laravel 12</span>
+                <span class="tech-pill">PHP 8.2+</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Laravel Reverb</span>
+                <span class="tech-pill">Firebase FCM</span>
+                <span class="tech-pill">Redis</span>
+                <span class="tech-pill">Google Gemini AI</span>
+                <span class="tech-pill">Stripe</span>
+                <span class="tech-pill">Twilio</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://pacinos.uk/" target="_blank" rel="noopener" class="btn btn-primary-sm">
+                  <span>pacinos.uk</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <button class="btn btn-secondary-sm modal-trigger" data-project="ali-pacino">
+                  <span>Architecture Deep Dive</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: BIOVUE DIGITAL WELLNESS -->
+          <article class="project-card glass-panel" id="project-biovue">
+            <div class="project-img-box">
+              <img src="assets/images/biovue.jpg" alt="BioVue Digital Wellness Platform" class="project-img" loading="lazy">
+              <div class="project-img-overlay">
+                <span class="project-category-badge">AI Wellness & Healthcare</span>
+                <a href="https://biovuedigitalwellness.com/" target="_blank" rel="noopener" class="btn-live-preview" title="Visit Live Site">
+                  <span>Visit biovuedigitalwellness.com</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta-strip">
+                <span class="company-badge">Softvence Agency</span>
+                <span class="role-badge">Role: Project Lead & Backend Developer</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://biovuedigitalwellness.com/" target="_blank" rel="noopener">BioVue Digital Wellness – AI-Driven Health & Membership Platform</a>
+              </h3>
+
+              <p class="project-summary">
+                A telehealth and digital wellness platform featuring biometric scoring, personalized supplement recommendations, and subscription billing.
+              </p>
+
+              <div class="project-highlights-box">
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>RESTful API Architecture:</strong> Developed and secured versioned RESTful endpoints using Laravel Sanctum, custom rate-limiting middleware, and strict request validation.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Stripe Subscriptions:</strong> Implemented recurring billing tiers, trial period handling, automated upgrades, and webhook reconciliation.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Biometric Scoring:</strong> Processed user health metrics to render algorithmic body projections and tailored supplement plans.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Real-Time Alerts:</strong> Integrated Laravel Reverb WebSockets and Firebase Cloud Messaging (FCM) for live consultations and push notifications.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="tech-pill">Laravel 12</span>
+                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Laravel Sanctum</span>
+                <span class="tech-pill">Stripe Subscriptions</span>
+                <span class="tech-pill">Laravel Reverb</span>
+                <span class="tech-pill">Firebase FCM</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://biovuedigitalwellness.com/" target="_blank" rel="noopener" class="btn btn-primary-sm">
+                  <span>biovuedigitalwellness.com</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <button class="btn btn-secondary-sm modal-trigger" data-project="biovue">
+                  <span>Architecture Deep Dive</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: CONNECT TO INSPECT -->
+          <article class="project-card glass-panel" id="project-neumera">
+            <div class="project-img-box">
+              <img src="assets/images/connect-to-inspect.png" alt="Connect to Inspect - Home Inspection Management & Reporting Platform" class="project-img" loading="lazy">
+              <div class="project-img-overlay">
+                <span class="project-category-badge">FinTech & Service Marketplace</span>
+                <div class="app-store-links-overlay">
+                  <a href="https://play.google.com/store/apps/details?id=com.connecttoinspect.app" target="_blank" rel="noopener" class="btn-store" title="Google Play Store">Google Play</a>
+                  <a href="https://apps.apple.com/us/app/connect-to-inspect/id6786938827" target="_blank" rel="noopener" class="btn-store" title="Apple App Store">App Store</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta-strip">
+                <span class="company-badge">Softvence Agency</span>
+                <span class="role-badge">Role: Project Lead & Backend Developer</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://play.google.com/store/apps/details?id=com.connecttoinspect.app" target="_blank" rel="noopener">Connect to Inspect – Home Inspection Management & Reporting Platform</a>
+              </h3>
+
+              <p class="project-summary">
+                A comprehensive inspection and reporting platform connecting property buyers, real estate agents, and corporate clients with certified home inspectors. Features scheduled client summary reports, PDF exports, inspector earnings, and automated Stripe Connect payouts.
+              </p>
+
+              <div class="project-highlights-box">
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Stripe Connect Transfers:</strong> Dynamic platform fee splits, payment processing, and automated bank transfers via Stripe Connect.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Queued Automated Payouts:</strong> Asynchronous payout jobs designed to prevent duplicate payout processing through idempotency protection.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Client Reporting Engine:</strong> Automated PDF report generation, weekly/monthly report scheduling, and direct email distribution for corporate clients.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Mobile App Ecosystem:</strong> Live on both Google Play Store and Apple App Store with unified Laravel backend.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="tech-pill">Laravel 12</span>
+                <span class="tech-pill">Stripe Connect</span>
+                <span class="tech-pill">Laravel Queues</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Firebase FCM</span>
+                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill">Dart / Flutter API</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.connecttoinspect.app" target="_blank" rel="noopener" class="btn btn-primary-sm">
+                  <span>Google Play</span>
+                </a>
+                <a href="https://apps.apple.com/us/app/connect-to-inspect/id6786938827" target="_blank" rel="noopener" class="btn btn-secondary-sm">
+                  <span>App Store</span>
+                </a>
+                <button class="btn btn-ghost modal-trigger" data-project="neumera">
+                  <span>Deep Dive</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: FIND & BOOK (INDIVIDUAL / SOLO PROJECT) -->
+          <article class="project-card glass-panel" id="project-find-book">
+            <div class="project-img-box">
+              <img src="assets/images/find-book.jpg" alt="Find & Book Multi-Vendor Booking & E-Commerce Platform" class="project-img" loading="lazy">
+              <div class="project-img-overlay">
+                <span class="project-category-badge">Booking & Service Marketplace</span>
+                <a href="https://play.google.com/store/apps/details?id=com.findandbook.sireenshaban" target="_blank" rel="noopener" class="btn-live-preview" title="Visit Google Play Store">
+                  <span>Google Play</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-meta-strip">
+                <span class="company-badge">Web Admin & Mobile App</span>
+                <span class="role-badge role-badge-solo">Role: Sole Backend Developer</span>
+              </div>
+
+              <h3 class="project-title">
+                <a href="https://play.google.com/store/apps/details?id=com.findandbook.sireenshaban" target="_blank" rel="noopener">Find & Book – Multi-Vendor Booking & E-Commerce Platform</a>
+              </h3>
+
+              <p class="project-summary">
+                Developed the Laravel backend independently for a multi-vendor booking and service marketplace, covering vendor management, service discovery, bookings, subscriptions, and payment workflows.
+              </p>
+
+              <div class="project-highlights-box">
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>REST API Development:</strong> Built APIs for vendor management, service browsing, booking workflows, and subscription plans.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Booking Management:</strong> Implemented booking workflows with time-slot management.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Stripe Integration:</strong> Integrated Stripe payments and webhooks to handle payment events.</span>
+                </div>
+                <div class="highlight-bullet">
+                  <span class="bullet-dot"></span>
+                  <span><strong>Admin & Vendor Management:</strong> Developed vendor earnings, platform fee calculation, and admin dashboard modules for booking and subscription management.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="tech-pill">Laravel</span>
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">Stripe</span>
+                <span class="tech-pill">Webhooks</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.findandbook.sireenshaban" target="_blank" rel="noopener" class="btn btn-primary-sm">
+                  <span>Google Play</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <a href="https://apps.apple.com/us/app/find-book/id6761288062" target="_blank" rel="noopener" class="btn btn-secondary-sm">
+                  <span>App Store</span>
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <button class="btn btn-ghost modal-trigger" data-project="find-book">
+                  <span>Deep Dive</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center" style="margin-top: 60px;">
+          <a href="contact.html" class="btn btn-primary btn-glow">
+            <span>Have a Project in Mind? Let's Talk</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="index.html" class="brand-logo footer-logo">
+          <span class="logo-bracket">&lt;</span><span class="logo-text">RKM</span><span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Engineered with high standards, clean architecture & production rigor.</p>
+      </div>
+
+      <div class="footer-center">
+        <span class="status-indicator-ping"></span>
+        <span>Open for Full-Stack Laravel Opportunities</span>
+      </div>
+
+      <div class="footer-right">
+        <p class="copyright">&copy; <span id="current-year">2026</span> Rehana Kabir Mim. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME PREVIEW / PRINT MODAL -->
+  <div class="modal-overlay" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title" aria-hidden="true">
+    <div class="modal-container resume-modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="resume-modal-title">Rehana Kabir Mim - Professional Resume</h3>
+        </div>
+        <div class="modal-actions-group">
+          <a href="assets/Rehana_Kabir_Mim_Resume.pdf" download="Rehana_Kabir_Mim_Resume.pdf" class="btn btn-primary-sm" id="download-resume-btn" aria-label="Download resume PDF directly">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PDF</span>
+          </a>
+          <button class="btn btn-secondary-sm" id="print-resume-btn" aria-label="Print resume">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Print</span>
+          </button>
+          <button class="close-modal-btn" id="close-resume-modal" aria-label="Close resume modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body printable-resume" id="printable-resume-content">
+        <div class="resume-sheet-header">
+          <h2>REHANA KABIR MIM</h2>
+          <div class="resume-sheet-role">Full-Stack Developer | Laravel & Backend Specialist</div>
+          <div class="resume-sheet-contact">
+            <span>Rayerbag, Jatrabari, Dhaka-1362</span> • 
+            <span><a href="mailto:rehanakabirmim@gmail.com">rehanakabirmim@gmail.com</a></span> • 
+            <span>(+880) 1680650424</span>
+          </div>
+          <div class="resume-sheet-links">
+            <a href="https://github.com/rehanakabirmim" target="_blank">github.com/rehanakabirmim</a> • 
+            <a href="https://www.linkedin.com/in/rehana-kabir-mim-63bb6623a" target="_blank">linkedin.com/in/rehana-kabir-mim</a> • 
+            <a href="https://pacinos.uk/" target="_blank">Portfolio & Live Systems</a>
+          </div>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">PROFESSIONAL SUMMARY</h4>
+          <p>
+            Laravel-focused Full-Stack Developer experienced in building backend systems for web and mobile applications. Skilled in PHP, Laravel, MySQL, REST API development, database transactions, row-level locking, Stripe integrations, real-time communication, background queues, and third-party APIs. Experienced in coordinating development tasks, collaborating with international clients, and contributing to production applications.
+          </p>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">WORK EXPERIENCE</h4>
+
+          <div class="resume-entry">
+            <div class="resume-entry-title">
+              <strong>Executive Laravel Developer</strong><span class="resume-meta-divider">|</span>Softvence Agency<span class="resume-meta-divider">|</span><span class="resume-entry-date">August 2025 – Present</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Architect and develop scalable backend ecosystems using Laravel, PHP, MySQL, REST APIs, and Laravel Sanctum.</li>
+              <li>Design database architecture, relationships, complex migrations, and real-time workflows for production systems.</li>
+              <li>Build authentication, payment gateways (Stripe &amp; Stripe Connect), webhooks, push notifications, and background queues.</li>
+              <li>Lead project sprint planning, task assignments, code reviews, and QA validation to ensure high technical quality.</li>
+              <li>Communicate directly with international clients to clarify specifications, conduct sprint demos, and align deliverables.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-title">
+              <strong>Laravel Developer Intern</strong><span class="resume-meta-divider">|</span>Web Shinez Technology<span class="resume-meta-divider">|</span><span class="resume-entry-date">July 2024 – December 2024</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Developed a Student Management System using Laravel, including HR, administration, and attendance modules.</li>
+              <li>Worked on database design, migrations, backend development, and REST API integration.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">TECHNICAL SKILLS</h4>
+          <div class="resume-skills-grid">
+            <div class="resume-skill-row">
+              <strong>Programming Languages:</strong> <span>C, PHP, JavaScript, SQL</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Backend Development:</strong> <span>Laravel (10–13), OOP, MVC, Eloquent ORM, RESTful API Development, Laravel Sanctum</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Database:</strong> <span>MySQL, Schema Design, Migrations, Indexing, Transactions, Row-Level Locking (<code>lockForUpdate</code>)</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Payment Integration:</strong> <span>Stripe, Stripe Connect, Webhooks, Subscription Management</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Real-Time &amp; Background:</strong> <span>Laravel Reverb, WebSockets, Queues, Background Workers, Redis</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Third-Party Integrations:</strong> <span>Firebase Cloud Messaging (FCM), Google Gemini API, Twilio</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Frontend:</strong> <span>HTML5, CSS3, Bootstrap, JavaScript, jQuery, Blade, Next.js</span>
+            </div>
+            <div class="resume-skill-row">
+              <strong>Tools &amp; Deployment:</strong> <span>Git, GitHub, GitLab, Postman, Linux CLI, Hostinger VPS, cPanel, Docker (Familiar)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE 2 (PAGE BREAK FOR PRINT) -->
+        <div class="resume-section-block page-break">
+          <h4 class="resume-sec-title">FEATURED PROJECTS (SELECTED WORKS)</h4>
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>Ali Pacino — Multi-Branch Restaurant ERP &amp; AI</strong> (<a href="https://pacinos.uk/" target="_blank" rel="noopener">pacinos.uk</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Developed multi-branch architecture with 89 Eloquent models, 8-role RBAC, and pessimistic row-locking (<code>lockForUpdate</code>) for concurrent POS inventory deductions.</li>
+              <li>Integrated real-time Kitchen Display (KDS) via Laravel Reverb WebSockets and Google Gemini AI sales trend analytics.</li>
+            </ul>
+          </div>
+
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>BioVue Digital Wellness — AI-Driven Health &amp; Telehealth</strong> (<a href="https://biovuedigitalwellness.com/" target="_blank" rel="noopener">biovuedigitalwellness.com</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Contributed to 100+ secure RESTful APIs with Laravel Sanctum, custom rate-limiting middleware, and strict request validation.</li>
+              <li>Integrated Stripe multi-tier subscription engine with webhook validation, automated trial handling, and Firebase FCM push alerts.</li>
+            </ul>
+          </div>
+
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>Connect to Inspect — Property Inspection Marketplace</strong> (<a href="https://play.google.com/store/apps/details?id=com.connecttoinspect.app" target="_blank" rel="noopener">Google Play</a> • <a href="https://apps.apple.com/us/app/connect-to-inspect/id6786938827" target="_blank" rel="noopener">App Store</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Engineered Stripe Connect payout workflows with queued transfers, dynamic platform fee splits, and idempotency protection.</li>
+              <li>Developed corporate client reporting engine with scheduled PDF exports and role-based permissions.</li>
+            </ul>
+          </div>
+
+          <div class="resume-project-item">
+            <div class="resume-project-title">
+              <strong>Find &amp; Book — Multi-Vendor Booking &amp; E-Commerce Platform</strong> (<a href="https://play.google.com/store/apps/details?id=com.findandbook.sireenshaban" target="_blank" rel="noopener">Google Play</a> • <a href="https://apps.apple.com/us/app/find-book/id6761288062" target="_blank" rel="noopener">App Store</a>)
+            </div>
+            <div class="resume-project-meta">
+              <span class="resume-company-label">Web Admin &amp; Mobile App</span><span class="resume-meta-divider">|</span><span class="resume-role-label-solo">Role: Sole Backend Developer</span>
+            </div>
+            <ul class="resume-bullet-list">
+              <li>Developed the complete Laravel backend and versioned RESTful APIs powering both iOS and Android applications.</li>
+              <li>Implemented time-slot booking management, Stripe payment webhooks, vendor subscription tiers, and earnings calculation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section-block">
+          <h4 class="resume-sec-title">EDUCATION &amp; CERTIFICATIONS</h4>
+          <div class="resume-edu-item">
+            <div class="resume-edu-title">
+              <strong>B.Sc. in Computer Science and Engineering</strong> — Stamford University Bangladesh
+            </div>
+            <div class="resume-edu-date">
+              2018 – 2023 | CGPA: 3.84 / 4.00
+            </div>
+          </div>
+          <div class="resume-edu-item">
+            <div class="resume-edu-title">
+              <strong>Professional Certifications &amp; Specialized Training:</strong>
+            </div>
+            <ul class="resume-bullet-list" style="margin-top: 4px;">
+              <li><strong>RPL Web Design &amp; Development (Level 03)</strong> — National Skills Development Authority (NSDA) Bangladesh (2025)</li>
+              <li><strong>Professional PHP &amp; Laravel Development</strong> — UY Systems Ltd &amp; Pencil Box Training</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT DEEP DIVE MODAL -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" aria-hidden="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div id="modal-project-title-box">
+          <h3 id="modal-project-title">Project Architecture Deep Dive</h3>
+          <span class="modal-sub" id="modal-project-category">Technical Breakdown &amp; Implementation Details</span>
+        </div>
+        <button class="close-modal-btn" id="close-project-modal" aria-label="Close project modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-project-body">
+        <!-- Dynamically injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rehana Kabir Mim - Professional Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    @page {
+      margin: 12mm 14mm;
+      size: A4 portrait;
+    }
+    body {
+      background: #ffffff;
+      color: #1e293b;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 9.2pt;
+      line-height: 1.42;
+      padding: 12mm 15mm;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+    @media print {
+      body {
+        padding: 0;
+        max-width: 100%;
+      }
+      .page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+    }
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+    a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* HEADER */
+    .resume-sheet-header {
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .resume-sheet-header h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 21pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+    .resume-sheet-role {
+      font-size: 10.8pt;
+      font-weight: 700;
+      color: #4338ca;
+      letter-spacing: 0.02em;
+      margin-bottom: 5px;
+    }
+    .resume-sheet-contact, .resume-sheet-links {
+      font-size: 8.8pt;
+      color: #475569;
+      line-height: 1.45;
+    }
+    .resume-sheet-contact span, .resume-sheet-links a {
+      margin: 0 4px;
+    }
+
+    /* SECTION STYLES */
+    .resume-section-block {
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+    .resume-sec-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .resume-summary-text {
+      font-size: 9.1pt;
+      color: #334155;
+      line-height: 1.48;
+      text-align: justify;
+    }
+
+    /* WORK EXPERIENCE ENTRY */
+    .resume-entry {
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .resume-entry:last-child {
+      margin-bottom: 0;
+    }
+    .resume-entry-title {
+      font-size: 9.8pt;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .resume-entry-title strong {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .resume-entry-date {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #4338ca;
+    }
+    .resume-bullet-list {
+      margin-top: 3px;
+      padding-left: 17px;
+    }
+    .resume-bullet-list li {
+      font-size: 8.9pt;
+      color: #334155;
+      margin-bottom: 3px;
+      line-height: 1.38;
+    }
+    .resume-bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+    code {
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #e2e8f0;
+      padding: 0.5px 3.5px;
+      font-size: 8pt;
+      font-family: 'JetBrains Mono', monospace;
+      border-radius: 3px;
+    }
+
+    /* TECHNICAL SKILLS */
+    .resume-skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      font-size: 8.8pt;
+      line-height: 1.38;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 9px 13px;
+    }
+    .resume-skill-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: #334155;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .resume-skill-row:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .resume-skill-row strong {
+      color: #1e3a8a;
+      font-weight: 800;
+      min-width: 195px;
+      flex-shrink: 0;
+      letter-spacing: 0.01em;
+    }
+    .resume-skill-row span {
+      color: #0f172a;
+      font-weight: 500;
+      flex-grow: 1;
+    }
+
+    /* FEATURED PROJECTS */
+    .resume-project-item {
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .resume-project-item:last-child {
+      margin-bottom: 0;
+    }
+    .resume-project-title {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+    .resume-project-meta {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+    .resume-company-label {
+      color: #3730a3;
+      font-weight: 700;
+    }
+    .resume-meta-divider {
+      color: #94a3b8;
+      margin: 0 4px;
+      font-weight: 400;
+    }
+    .resume-role-label {
+      color: #0284c7;
+      font-weight: 600;
+    }
+    .resume-role-label-solo {
+      color: #059669;
+      font-weight: 700;
+    }
+
+    /* EDUCATION & CERTIFICATIONS */
+    .resume-edu-item {
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .resume-edu-title {
+      font-size: 9.4pt;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .resume-edu-date {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #4338ca;
+      margin-top: 1px;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="resume-sheet-header">
+    <h1>REHANA KABIR MIM</h1>
+    <div class="resume-sheet-role">Full-Stack Developer | Laravel &amp; Backend Specialist</div>
+    <div class="resume-sheet-contact">
+      <span>Rayerbag, Jatrabari, Dhaka-1362</span> • 
+      <span><a href="mailto:rehanakabirmim@gmail.com">rehanakabirmim@gmail.com</a></span> • 
+      <span>(+880) 1680650424</span>
+    </div>
+    <div class="resume-sheet-links">
+      <a href="https://github.com/rehanakabirmim" target="_blank">github.com/rehanakabirmim</a> • 
+      <a href="https://www.linkedin.com/in/rehana-kabir-mim-63bb6623a" target="_blank">linkedin.com/in/rehana-kabir-mim</a> • 
+      <a href="https://pacinos.uk/" target="_blank">Portfolio &amp; Live Systems (pacinos.uk)</a>
+    </div>
+  </div>
+
+  <div class="resume-section-block">
+    <h2 class="resume-sec-title">Professional Summary</h2>
+    <p class="resume-summary-text">
+      Laravel-focused Full-Stack Developer experienced in building backend systems for web and mobile applications. Skilled in PHP, Laravel, MySQL, REST API development, database transactions, row-level locking, Stripe integrations, real-time communication, background queues, and third-party APIs. Experienced in coordinating development tasks, collaborating with international clients, and contributing to production applications.
+    </p>
+  </div>
+
+  <div class="resume-section-block">
+    <h2 class="resume-sec-title">Work Experience</h2>
+
+    <div class="resume-entry">
+      <div class="resume-entry-title">
+        <strong>Executive Laravel Developer</strong><span class="resume-meta-divider">|</span>Softvence Agency<span class="resume-meta-divider">|</span><span class="resume-entry-date">August 2025 – Present</span>
+      </div>
+      <ul class="resume-bullet-list">
+        <li>Architect and develop scalable backend ecosystems using Laravel, PHP, MySQL, REST APIs, and Laravel Sanctum.</li>
+        <li>Design database architecture, relationships, complex migrations, and real-time workflows for production systems.</li>
+        <li>Build authentication, payment gateways (Stripe &amp; Stripe Connect), webhooks, push notifications, and background queues.</li>
+        <li>Lead project sprint planning, task assignments, code reviews, and QA validation to ensure high technical quality.</li>
+        <li>Communicate directly with international clients to clarify specifications, conduct sprint demos, and align deliverables.</li>
+      </ul>
+    </div>
+
+    <div class="resume-entry">
+      <div class="resume-entry-title">
+        <strong>Laravel Developer Intern</strong><span class="resume-meta-divider">|</span>Web Shinez Technology<span class="resume-meta-divider">|</span><span class="resume-entry-date">July 2024 – December 2024</span>
+      </div>
+      <ul class="resume-bullet-list">
+        <li>Developed a Student Management System using Laravel, including HR, administration, and attendance modules.</li>
+        <li>Worked on database design, migrations, backend development, and REST API integration.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section-block">
+    <h2 class="resume-sec-title">Technical Skills</h2>
+    <div class="resume-skills-grid">
+      <div class="resume-skill-row">
+        <strong>Programming Languages:</strong> <span>C, PHP, JavaScript, SQL</span>
+      </div>
+      <div class="resume-skill-row">
+        <strong>Backend Development:</strong> <span>Laravel (10–13), OOP, MVC, Eloquent ORM, RESTful API Development, Laravel Sanctum</span>
+      </div>
+      <div class="resume-skill-row">
+        <strong>Database:</strong> <span>MySQL, Schema Design, Migrations, Indexing, Transactions, Row-Level Locking (<code>lockForUpdate</code>)</span>
+      </div>
+      <div class="resume-skill-row">
+        <strong>Payment Integration:</strong> <span>Stripe, Stripe Connect, Webhooks, Subscription Management</span>
+      </div>
+      <div class="resume-skill-row">
+        <strong>Real-Time &amp; Background:</strong> <span>Laravel Reverb, WebSockets, Queues, Background Workers, Redis</span>
+      </div>
+      <div class="resume-skill-row">
+        <strong>Third-Party Integrations:</strong> <span>Firebase Cloud Messaging (FCM), Google Gemini API, Twilio</span>
+      </div>
+      <div class="resume-skill-row">
+        <strong>Frontend:</strong> <span>HTML5, CSS3, Bootstrap, JavaScript, jQuery, Blade, Next.js</span>
+      </div>
+      <div class="resume-skill-row">
+        <strong>Tools &amp; Deployment:</strong> <span>Git, GitHub, GitLab, Postman, Linux CLI, Hostinger VPS, cPanel, Docker (Familiar)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 2 (PAGE BREAK) ==================== -->
+  <div class="resume-section-block page-break" style="padding-top: 4px;">
+    <h2 class="resume-sec-title">Featured Projects (Selected Works)</h2>
+
+    <div class="resume-project-item">
+      <div class="resume-project-title">
+        <strong>Ali Pacino — Multi-Branch Restaurant ERP &amp; AI</strong> (<a href="https://pacinos.uk/" target="_blank">pacinos.uk</a>)
+      </div>
+      <div class="resume-project-meta">
+        <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+      </div>
+      <ul class="resume-bullet-list">
+        <li>Developed multi-branch architecture with 89 Eloquent models, 8-role RBAC, and pessimistic row-locking (<code>lockForUpdate</code>) for concurrent POS inventory deductions.</li>
+        <li>Integrated real-time Kitchen Display (KDS) via Laravel Reverb WebSockets and Google Gemini AI sales trend analytics.</li>
+      </ul>
+    </div>
+
+    <div class="resume-project-item">
+      <div class="resume-project-title">
+        <strong>BioVue Digital Wellness — AI-Driven Health &amp; Telehealth</strong> (<a href="https://biovuedigitalwellness.com/" target="_blank">biovuedigitalwellness.com</a>)
+      </div>
+      <div class="resume-project-meta">
+        <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+      </div>
+      <ul class="resume-bullet-list">
+        <li>Contributed to 100+ secure RESTful APIs with Laravel Sanctum, custom rate-limiting middleware, and strict request validation.</li>
+        <li>Integrated Stripe multi-tier subscription engine with webhook validation, automated trial handling, and Firebase FCM push alerts.</li>
+      </ul>
+    </div>
+
+    <div class="resume-project-item">
+      <div class="resume-project-title">
+        <strong>Connect to Inspect — Property Inspection Marketplace</strong> (<a href="https://play.google.com/store/apps/details?id=com.connecttoinspect.app" target="_blank">Google Play</a> • <a href="https://apps.apple.com/us/app/connect-to-inspect/id6786938827" target="_blank">App Store</a>)
+      </div>
+      <div class="resume-project-meta">
+        <span class="resume-company-label">Softvence Agency</span><span class="resume-meta-divider">|</span><span class="resume-role-label">Project Lead &amp; Backend Developer</span>
+      </div>
+      <ul class="resume-bullet-list">
+        <li>Engineered Stripe Connect payout workflows with queued transfers, dynamic platform fee splits, and idempotency protection.</li>
+        <li>Developed corporate client reporting engine with scheduled PDF exports and role-based permissions.</li>
+      </ul>
+    </div>
+
+    <div class="resume-project-item">
+      <div class="resume-project-title">
+        <strong>Find &amp; Book — Multi-Vendor Booking &amp; E-Commerce Platform</strong> (<a href="https://play.google.com/store/apps/details?id=com.findandbook.sireenshaban" target="_blank">Google Play</a> • <a href="https://apps.apple.com/us/app/find-book/id6761288062" target="_blank">App Store</a>)
+      </div>
+      <div class="resume-project-meta">
+        <span class="resume-company-label">Web Admin &amp; Mobile App</span><span class="resume-meta-divider">|</span><span class="resume-role-label-solo">Role: Sole Backend Developer</span>
+      </div>
+      <ul class="resume-bullet-list">
+        <li>Developed the complete Laravel backend and versioned RESTful APIs powering both iOS and Android applications.</li>
+        <li>Implemented time-slot booking management, Stripe payment webhooks, vendor subscription tiers, and earnings calculation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section-block">
+    <h2 class="resume-sec-title">Education &amp; Certifications</h2>
+
+    <div class="resume-edu-item">
+      <div class="resume-edu-title">
+        <strong>B.Sc. in Computer Science and Engineering</strong> — Stamford University Bangladesh
+      </div>
+      <div class="resume-edu-date">
+        2018 – 2023 | CGPA: 3.84 / 4.00
+      </div>
+    </div>
+
+    <div class="resume-edu-item">
+      <div class="resume-edu-title">
+        <strong>Professional Certifications &amp; Specialized Training:</strong>
+      </div>
+      <ul class="resume-bullet-list" style="margin-top: 4px;">
+        <li>
+          <strong>RPL Web Design &amp; Development (Level 03)</strong> — National Skills Development Authority (NSDA) Bangladesh (2025)
+        </li>
+        <li>
+          <strong>Professional PHP &amp; Laravel Development</strong> — UY Systems Ltd &amp; Pencil Box Training
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
