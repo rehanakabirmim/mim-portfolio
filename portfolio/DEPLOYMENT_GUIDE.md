@@ -5,19 +5,19 @@ This guide explains how to host your modern portfolio **100% Free** forever with
 ---
 
 ## 🚀 Option 1: GitHub Pages (Recommended - 100% Free Forever)
-Since you already have a GitHub Pages website at `https://rehanakabirmim.github.io/portfolio_up/`, this is the best, fastest, and most reliable option.
+Since you already have a GitHub Pages website at `https://rehanakabirmim.github.io/mim-portfolio/`, this is the best, fastest, and most reliable option.
 
 ### Steps to Deploy on GitHub Pages:
-1. Open terminal inside this folder (`c:\Users\mim\Documents\portfolio`):
+1. Open terminal inside this folder (`d:\mim-portfolio`):
    ```bash
    git init
    git add .
    git commit -m "feat: modern production portfolio"
    ```
-2. Link to your existing repository (or create a new one called `portfolio_up` or `rehanakabirmim.github.io`):
+2. Link to your existing repository (or create a new one called `mim-portfolio`):
    ```bash
    git branch -M main
-   git remote add origin https://github.com/rehanakabirmim/portfolio_up.git
+   git remote add origin https://github.com/rehanakabirmim/mim-portfolio.git
    git push -u origin main --force
    ```
 3. In your GitHub repository:
@@ -25,7 +25,7 @@ Since you already have a GitHub Pages website at `https://rehanakabirmim.github.
    - Under **Build and deployment** > **Branch**, select `main` and `/ (root)`
    - Click **Save**
 4. Within 1 minute, your portfolio will be live at:
-   👉 **`https://rehanakabirmim.github.io/portfolio_up/`** (or your root github.io domain)!
+   👉 **`https://rehanakabirmim.github.io/mim-portfolio/`**!
 
 ---
 
@@ -33,7 +33,7 @@ Since you already have a GitHub Pages website at `https://rehanakabirmim.github.
 
 ### Deploy on Vercel:
 1. Go to [vercel.com](https://vercel.com) and log in with GitHub.
-2. Click **"Add New Project"** > Import `portfolio_up`.
+2. Click **"Add New Project"** > Import `mim-portfolio`.
 3. Keep default settings and click **Deploy**.
 4. You get an instant URL like `rehana-portfolio.vercel.app` + SSL certificate for free.
 
