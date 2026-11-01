@@ -339,7 +339,8 @@ code {
   padding: 12px 24px;
   border-radius: var(--radius-full);
   transition: all var(--transition-fast);
-  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .btn-primary {
@@ -764,10 +765,7 @@ code {
   line-height: 1.8;
   margin-bottom: 34px;
   max-width: 620px;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  text-align: left;
   text-wrap: pretty;
 }
 
@@ -1074,10 +1072,7 @@ code {
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 24px;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  text-align: left;
 }
 
 .card-text strong {
@@ -1096,8 +1091,7 @@ code {
   gap: 12px;
   font-size: 0.94rem;
   color: var(--text-muted);
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .highlight-item strong {
@@ -1274,8 +1268,7 @@ code {
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.55;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .pipeline-connector {
@@ -1596,10 +1589,8 @@ code {
   color: var(--text-muted);
   line-height: 1.65;
   margin-bottom: 22px;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  text-align: left;
+  text-wrap: pretty;
 }
 
 .project-summary strong {
@@ -1620,14 +1611,13 @@ code {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.55;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .highlight-bullet span:last-child {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
   flex: 1;
+  min-width: 0;
 }
 
 .bullet-dot {
@@ -1792,8 +1782,7 @@ code {
   color: var(--text-muted);
   line-height: 1.65;
   margin-bottom: 18px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .timeline-bullets {
@@ -1811,8 +1800,7 @@ code {
   line-height: 1.55;
   position: relative;
   padding-left: 20px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .timeline-bullets li::before {
@@ -2201,7 +2189,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 18px;
+  padding: 12px 16px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -2209,6 +2197,9 @@ code {
   font-size: 0.92rem;
   color: var(--text-main);
   transition: all var(--transition-fast);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-social-btn svg {
@@ -2264,10 +2255,13 @@ code {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
+  padding: 12px 14px;
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 16px;
   transition: all var(--transition-fast);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 [data-theme="light"] .form-group input, [data-theme="light"] .form-group textarea {
@@ -2829,8 +2823,7 @@ code {
   }
 
   .hero-desc {
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
   }
@@ -2950,8 +2943,13 @@ code {
     font-size: 0.98rem;
     line-height: 1.65;
     margin-bottom: 24px;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
+  }
+
+  .btn {
+    white-space: normal !important;
+    text-align: center;
+    max-width: 100%;
   }
 
   .hero-social-strip {
@@ -3410,18 +3408,37 @@ code {
   flex-direction: column;
 }
 
+.contact-info-col,
+.contact-form-col {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
 .contact-card-main {
   padding: 38px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form-card {
+  padding: 36px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .contact-card-main,
   .contact-form-card {
-    padding: 24px;
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
   }
 }
 
@@ -3430,33 +3447,77 @@ code {
     grid-template-columns: 1fr;
   }
   .credential-card {
-    padding: 20px;
-    gap: 16px;
-  }
-  .channel-item {
-    padding: 12px 14px;
+    padding: 16px 14px;
     gap: 12px;
   }
+  .channel-item {
+    padding: 10px 12px !important;
+    gap: 10px !important;
+  }
+  .channel-icon {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .channel-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
   .channel-value {
-    font-size: 0.88rem;
+    font-size: 0.82rem !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+  .btn-copy-channel {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .btn-copy-channel svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-card-main,
+  .contact-form-card {
+    padding: 16px 10px;
+  }
+  .channel-item {
+    padding: 8px 8px !important;
+    gap: 8px !important;
+  }
+  .channel-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .btn-copy-channel {
+    width: 28px !important;
+    height: 28px !important;
   }
 }
 
 .contact-channels-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .channel-item {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: 14px;
+  padding: 14px 18px;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-subtle);
   transition: all var(--transition-fast);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .channel-item:hover {
@@ -3478,18 +3539,19 @@ code {
 }
 
 .channel-icon svg {
-  width: 22px !important;
-  height: 22px !important;
-  max-width: 22px;
-  max-height: 22px;
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px;
+  max-height: 20px;
   stroke: var(--secondary);
 }
 
 .channel-meta {
-  flex: 1;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow: hidden;
 }
 
 .channel-label {
@@ -3501,11 +3563,13 @@ code {
 }
 
 .channel-value {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-main);
   transition: color var(--transition-fast);
   word-break: break-all;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .channel-value:hover {
