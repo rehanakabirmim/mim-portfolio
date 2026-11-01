@@ -132,6 +132,8 @@
       color: #334155;
       margin-bottom: 3px;
       line-height: 1.38;
+      text-align: justify;
+      text-justify: inter-word;
     }
     .resume-bullet-list li:last-child {
       margin-bottom: 0;
@@ -238,6 +240,39 @@
       color: #4338ca;
       margin-top: 1px;
       margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 14px;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .resume-sheet-header h1 {
+        font-size: 1.5rem;
+      }
+      .resume-sheet-role {
+        font-size: 0.95rem;
+      }
+      .resume-sheet-contact, .resume-sheet-links {
+        font-size: 0.8rem;
+        word-break: break-word;
+      }
+      .resume-skills-grid {
+        padding: 8px 10px;
+      }
+      .resume-skill-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+      }
+      .resume-skill-row strong {
+        min-width: unset;
+        width: 100%;
+      }
+      .resume-bullet-list {
+        padding-left: 16px;
+      }
     }
   </style>
 </head>
