@@ -2102,19 +2102,27 @@ code {
 .contact-cards-col {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .contact-info-card {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 22px 24px;
+  gap: 14px;
+  padding: 16px 18px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .contact-icon {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   background: rgba(99, 102, 241, 0.12);
   border: 1px solid rgba(99, 102, 241, 0.25);
@@ -2126,16 +2134,18 @@ code {
 }
 
 .contact-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 .contact-text {
-  flex-grow: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .contact-label {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -2144,9 +2154,13 @@ code {
 }
 
 .contact-val {
-  font-size: 1.02rem;
+  font-size: clamp(0.82rem, 3.2vw, 0.98rem);
   font-weight: 600;
   color: var(--text-main);
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  display: block;
 }
 
 .contact-val:hover {
@@ -2154,15 +2168,16 @@ code {
 }
 
 .copy-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -3112,6 +3127,79 @@ code {
 
   .arch-card {
     padding: 22px 16px;
+  }
+
+  .contact-info-card {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .contact-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-val {
+    font-size: 0.84rem;
+  }
+
+  .copy-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .copy-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-actions {
+    gap: 4px;
+  }
+
+  .header-actions .btn-primary-sm {
+    padding: 5px 8px;
+    font-size: 0.74rem;
+  }
+
+  .theme-toggle-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hamburger-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-logo {
+    font-size: 1.1rem;
+  }
+
+  .contact-info-card {
+    padding: 10px 10px;
+    gap: 8px;
+  }
+
+  .contact-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-val {
+    font-size: 0.78rem;
+  }
+
+  .copy-btn {
+    width: 28px;
+    height: 28px;
   }
 }
 
